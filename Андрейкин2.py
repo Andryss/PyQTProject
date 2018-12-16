@@ -8,7 +8,8 @@ from PyQt5.QtCore import Qt, QSize, QRect, QCoreApplication, QMetaObject
 operator = []
 operation = True
 memory = 0
-k = 0
+K = 0
+M = 0
 class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -50,7 +51,8 @@ class MyWidget(QMainWindow):
         
         
     def one(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         if operation:
             operator.append('1')
             operation = False
@@ -59,7 +61,8 @@ class MyWidget(QMainWindow):
         self.window.display(operator[-1])
         self.sprav.setText(''.join(operator))
     def two(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         if operation:
             operator.append('2')
             operation = False
@@ -68,7 +71,8 @@ class MyWidget(QMainWindow):
         self.window.display(operator[-1])
         self.sprav.setText(''.join(operator))
     def three(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         if operation:
             operator.append('3')
             operation = False
@@ -77,7 +81,8 @@ class MyWidget(QMainWindow):
         self.window.display(operator[-1])
         self.sprav.setText(''.join(operator))
     def four(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         if operation:
             operator.append('4')
             operation = False
@@ -86,7 +91,8 @@ class MyWidget(QMainWindow):
         self.window.display(operator[-1])
         self.sprav.setText(''.join(operator))
     def five(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         if operation:
             operator.append('5')
             operation = False
@@ -95,7 +101,8 @@ class MyWidget(QMainWindow):
         self.window.display(operator[-1])
         self.sprav.setText(''.join(operator))
     def six(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         if operation:
             operator.append('6')
             operation = False
@@ -104,7 +111,8 @@ class MyWidget(QMainWindow):
         self.window.display(operator[-1])
         self.sprav.setText(''.join(operator))
     def seven(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         if operation:
             operator.append('7')
             operation = False
@@ -113,7 +121,8 @@ class MyWidget(QMainWindow):
         self.window.display(operator[-1])
         self.sprav.setText(''.join(operator))
     def eight(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         if operation:
             operator.append('8')
             operation = False
@@ -122,7 +131,8 @@ class MyWidget(QMainWindow):
         self.window.display(operator[-1])
         self.sprav.setText(''.join(operator))
     def nine(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         if operation:
             operator.append('9')
             operation = False
@@ -131,7 +141,8 @@ class MyWidget(QMainWindow):
         self.window.display(operator[-1])
         self.sprav.setText(''.join(operator))
     def zero(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         if operation:
             operator.append('0')
             operation = False
@@ -140,7 +151,8 @@ class MyWidget(QMainWindow):
         self.window.display(operator[-1])
         self.sprav.setText(''.join(operator))
     def zerozero(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         if operation:
             operator.append('00')
             operation = False
@@ -149,7 +161,8 @@ class MyWidget(QMainWindow):
         self.window.display(operator[-1])
         self.sprav.setText(''.join(operator))
     def floating(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         if operation:
             operator.append('.')
             operation = False
@@ -159,80 +172,99 @@ class MyWidget(QMainWindow):
         self.sprav.setText(''.join(operator))
     
     def m_plus(self):
-        global memory, operator
+        global memory, operator, K
+        K = 0
         if operator[-1].isdigit():
             memory = float(memory) + float(operator[-1])
             self.m.setText("M+")
     def m_minus(self):
-        global memory, operator
+        global memory, operator, K
+        K = 0
         if operator[-1].isdigit():
             memory = float(memory) - float(operator[-1])
             self.m.setText("M-")
     def mr(self):
-        global operator, memory
+        global operator, memory, K
+        K = 0
         if memory != 0:
             operator.append('mr')
             self.window.display(memory)
             self.sprav.setText(''.join(operator))
     def mc(self):
-        global memory
+        global memory, K
+        K = 0
         memory = 0
         self.m.setText("")
         
     def sin(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         operation = True
         operator.append('sin')
         self.sprav.setText(''.join(operator))
     def cos(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         operation = True
         operator.append('cos')
         self.sprav.setText(''.join(operator))
     def tg(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         operation = True
         operator.append('tg')
         self.sprav.setText(''.join(operator))
     def ctg(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         operation = True
         operator.append('ctg')
         self.sprav.setText(''.join(operator))
         
     def plus(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         operation = True
         operator.append('+')
         self.sprav.setText(''.join(operator))
     def minus(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         operation = True
         operator.append('-')
         self.sprav.setText(''.join(operator))
     def ymn(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         operation = True
         operator.append('*')
         self.sprav.setText(''.join(operator))
     def step(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         operation = True
         operator.append('^')
         self.sprav.setText(''.join(operator))
     def delen(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         operation = True
         operator.append('/')
         self.sprav.setText(''.join(operator))
     def pr(self):
-        global operator, operation
+        global operator, operation, K
+        K = 0
         operation = True
         operator.append('%')
         self.sprav.setText(''.join(operator))
             
     def delet(self):
-        global operator, operation
+        global operator, operation, K, M
+        M += 1
+        if M == 7:
+            self.resize(490, 440)
+            M = 0
+        K = 0
         if len(operator) != 0:
             last = operator[-1]
             if last == 'sin' or last == 'cos' or last == 'tg' or last == 'ctg' or last == 'mr':
@@ -248,9 +280,9 @@ class MyWidget(QMainWindow):
                 self.window.display(0)
             self.sprav.setText(''.join(operator))
     def ac(self):
-        global operator, operation, k
-        k += 1
-        if k == 7:
+        global operator, operation, K
+        K += 1
+        if K == 7:
             self.resize(912, 689)
         operator = []
         operation = True
@@ -258,7 +290,8 @@ class MyWidget(QMainWindow):
         self.sprav.setText(''.join(operator))
     
     def result(self):
-        global operator, memory, operation
+        global operator, memory, operation, K
+        K = 0
         try:
             while 'mr' in operator:
                 index = operator.index('mr')
